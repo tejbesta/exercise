@@ -1,0 +1,21 @@
+schema{
+query : Query
+}
+
+type Employee{
+id:ID,
+fname:String,
+lname:String,
+email:String
+}
+
+type Query{
+getAllEmployees : [Employee]
+findEmployee(id:ID!) : Employee
+}
+type Mutation{
+createEmployee(fname:String,lname:String,email:String):Employee
+updateEmployee(id:ID!,fname:String,lname:String,email:String):Employee
+deleteEmployee(id:ID!):Boolean
+}
+
